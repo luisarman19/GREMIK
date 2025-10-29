@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto — Estructuras Metálicas</title>
+  <meta name="description" content="Página de contacto de Estructuras Metálicas. Envía tu mensaje para consultas sobre proyectos o servicios.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">EM</div>
+      <div>
+        <strong>Estructuras Metálicas</strong><br>
+        <small style="color:var(--muted)">Diseño · Fabricación · Instalación</small>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contáctanos</h1>
+      <p>Estamos aquí para atenderle. Encuentre nuestra información de contacto a continuación o envíenos un mensaje directamente.</p>
+
+      <!-- Información de contacto en la parte superior -->
+      <div class="contact-info">
+        <div class="info-column">
+          <h2>Información de Contacto</h2>
+          
+          <div class="info-item">
+            <h3>Dirección</h3>
+            <p>Calle Aquiles Serdan</p>
+            <p>S/N, Col. Morelos</p>
+            <p>Tlaxcoapan</p>
+            <p>Hidalgo, México.</p>
+          </div>
+          
+          <div class="info-item">
+            <h3>Correos Electrónicos</h3>
+            <p><a href="mailto:construtoragremik@gmail.com">construtoragremik@gmail.com</a></p>
+            <p><a href="mailto:joseramongarciajuarez@gmail.com">joseramongarciajuarez@gmail.com</a></p>
+          </div>
+          
+          <div class="info-item">
+            <h3>Teléfonos</h3>
+            <p><a href="tel:7787370870">778 737 0870</a></p>
+            <p><a href="tel:7731153306">773 115 3306</a></p>
+          </div>
+          </div>
+
+          <div class="directions">
+            <h3>Indicaciones</h3>
+            <p>Nos encontramos cerca del panteon municipal</p>
+            <p>Sobre la Av. Francisco I Madero</p>
+          </div>
+
+
+          <div class="info-item">
+            <h3>Horario de Atención</h3>
+            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+            <p>Sábados: 9:00 AM - 2:00 PM</p>
+            <p>Domingos: Cerrado</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario en la parte inferior -->
+      <div class="form-section">
+        <h2>Envíanos un Mensaje</h2>
+        <p>Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div>
+            <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+            <span class="error-message" id="error-name">Por favor ingresa tu nombre</span>
+          </div>
+          <div>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            <span class="error-message" id="error-email">Por favor ingresa un correo válido</span>
+          </div>
+          <div>
+            <input type="tel" id="phone" name="phone" placeholder="Teléfono (opcional)">
+          </div>
+          <div>
+            <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje" required></textarea>
+            <span class="error-message" id="error-message">Por favor escribe un mensaje</span>
+          </div>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+        <p id="success-message" style="color:green; display:none; margin-top:10px;">¡Mensaje enviado correctamente!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <strong>Estructuras Metálicas</strong> — Todos los derechos reservados
+  </footer>
+
+  <!-- Script para validación del formulario -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      const errorName = document.getElementById('error-name');
+      const errorEmail = document.getElementById('error-email');
+      const errorMessage = document.getElementById('error-message');
+      const successMessage = document.getElementById('success-message');
+      
+      let isValid = true;
+      
+      // Validar nombre
+      if (name.value.trim() === '') {
+        errorName.style.display = 'block';
+        isValid = false;
+      } else {
+        errorName.style.display = 'none';
+      }
+      
+      // Validar email
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        errorEmail.style.display = 'block';
+        isValid = false;
+      } else {
+        errorEmail.style.display = 'none';
+      }
+      
+      // Validar mensaje
+      if (message.value.trim() === '') {
+        errorMessage.style.display = 'block';
+        isValid = false;
+      } else {
+        errorMessage.style.display = 'none';
+      }
+      
+      // Si es válido, mostrar mensaje de éxito
+      if (isValid) {
+        successMessage.style.display = 'block';
+        this.reset();
+        
+        // Ocultar mensaje después de 5 segundos
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>
