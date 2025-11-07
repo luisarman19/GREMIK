@@ -4,14 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Galería — Estructuras Metálicas</title>
+  <title>Galería — Constructora GREMIK R.M.K</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    <header>
+  <header>
 
     <div class="brand">
       <div class="logo">
@@ -44,12 +45,12 @@
 
     <section>
       <div class="gallery-grid">
-        <div class="gallery-item"><img src="" alt="Proyecto 1"></div>
-        <div class="gallery-item"><img src="" alt="Proyecto 2"></div>
-        <div class="gallery-item"><img src="" alt="Proyecto 3"></div>
-        <div class="gallery-item"><img src="" alt="Proyecto 4"></div>
-        <div class="gallery-item"><img src="" alt="Proyecto 5"></div>
-        <div class="gallery-item"><img src="" alt="Proyecto 6"></div>
+        <div class="gallery-item"><img src="imagenes/imagen10.jpeg" alt="Proyecto 1"></div>
+        <div class="gallery-item"><img src="imagenes/imagen11.jpeg" alt="Proyecto 2"></div>
+        <div class="gallery-item"><img src="imagenes/imagen12.jpeg" alt="Proyecto 3"></div>
+        <div class="gallery-item"><img src="imagenes/imagen8.jpeg" alt="Proyecto 4"></div>
+        <div class="gallery-item"><img src="imagenes/imagen14.jpeg" alt="Proyecto 5"></div>
+        <div class="gallery-item"><img src="imagenes/imagen4.jpeg" alt="Proyecto 6"></div>
       </div>
     </section>
   </main>
@@ -60,9 +61,59 @@
     <img src="" alt="Imagen ampliada" id="lightbox-img">
   </div>
 
-  <footer>
-    © <strong>Estructuras Metálicas</strong> — Todos los derechos reservados
+  <footer style="
+    background-color: #0a2540;
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 3rem;
+  ">
+    <div style="font-size: 1.3rem; font-weight: bold;">
+      CONSTRUCTORA GREMIK R.M.K
+    </div>
+  
+    <div style="line-height: 1.8; margin-top: 0.5rem;">
+      📍 Av. Principal #123, Ciudad de México <br>
+      📞 <a href="tel:+5215555555555" style="color: #a3c9ff; text-decoration: none;">+52 1 555 555 5555</a> <br>
+      ✉️ <a href="mailto:contacto@gremikrmk.com" style="color: #a3c9ff; text-decoration: none;">contacto@gremikrmk.com</a>
+    </div>
+  
+    <div style="margin-top: 0.8rem;">
+      🌐
+      <a href="https://www.facebook.com" target="_blank"
+        style="color: #a3c9ff; text-decoration: none; margin: 0 8px;">Facebook</a>
+      <a href="https://www.instagram.com" target="_blank"
+        style="color: #a3c9ff; text-decoration: none; margin: 0 8px;">Instagram</a>
+      <a href="https://www.linkedin.com" target="_blank"
+        style="color: #a3c9ff; text-decoration: none; margin: 0 8px;">LinkedIn</a>
+    </div>
+  
+    <div style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
+      © 2025 CONSTRUCTORA GREMIK R.M.K — Todos los derechos reservados
+    </div>
   </footer>
+  
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    footer {
+      margin-top: auto;
+    }
+  
+    @media (max-width: 600px) {
+      footer {
+        font-size: 0.9rem;
+        padding: 2rem 0.5rem;
+      }
+    }
+  </style>
 
   <script>
     const galleryItems = document.querySelectorAll('.gallery-item img');
