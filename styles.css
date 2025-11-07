@@ -568,12 +568,13 @@ main {
 }
 
 .directions {
-  margin-top: 1rem;
+  margin: 2rem 0; /* agrega espacio arriba y abajo */
   padding: 1rem;
   background-color: #eff6ff;
-  border-radius: 8px;
-  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  border-left: 2px solid var(--primary);
 }
+
 
 .contact-form {
   display: flex;
