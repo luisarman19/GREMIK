@@ -103,48 +103,11 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* usa min-height en lugar de height */
+  height: 100vh; /* hace que ocupe toda la altura visible del navegador */
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
-body, html {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-/* Asegura que no haya espacios entre secciones */
-section {
-  margin: 0;
-  padding: 0;
-}
-
-/* Si tus otras secciones tienen margen superior, elimínalo */
-section + section {
-  margin-top: 0;
-}
-
-/* Asegura que tu galería y demás páginas no hereden márgenes extra */
-.galeria,
-.nosotros,
-.servicios {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-/* Opcional: un pequeño espacio si quieres separación visual entre secciones */
-main section:not(:first-of-type) {
-  padding-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 80vh; /* ajusta el alto en móviles para que no quede espacio de más */
-  }
-}
-
 
 .hero-image {
   position: relative;
@@ -204,6 +167,131 @@ main section:not(:first-of-type) {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInScale {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== cartas del index ===== */
+
+.services {
+  width: 100%;
+  background: #f8fafc;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.services h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  color: #0f172a;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Contenedor en cuadrícula */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Tarjetas con animaciones */
+.service-card {
+  background: white;
+  border-radius: 18px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de fondo al hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  opacity: 0.15;
+}
+
+/* Íconos */
+.icon {
+  font-size: 50px;
+  color: #2563eb;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, color 0.4s ease;
+  z-index: 1;
+}
+
+.service-card:hover .icon {
+  transform: rotate(10deg) scale(1.2);
+  color: #0ea5e9;
+}
+
+/* Títulos y texto */
+.service-card h3 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  color: #475569;
+  line-height: 1.6;
+  z-index: 1;
+  position: relative;
+}
+
+/* Animación de aparición al cargar */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 20px;
+  }
+  .service-card {
+    padding: 30px 16px;
+  }
+  .icon {
+    font-size: 40px;
   }
 }
 

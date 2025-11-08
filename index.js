@@ -43,3 +43,21 @@
   setInterval(changeImage, 10000);
   mainImage.addEventListener("click", changeImage);
 
+  // Detecta las tarjetas y las anima al hacer scroll
+  const cards = document.querySelectorAll('.service-card');
+
+  function showCardsOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85; // punto donde empieza la animación
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom) {
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showCardsOnScroll);
+  window.addEventListener('load', showCardsOnScroll);
+
+
