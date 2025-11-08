@@ -13,15 +13,15 @@
     },
     {
       title: "Fabricación personalizada",
-      desc: "Nos adaptamos a tus necesidades para crear estructuras únicas con los más altos estándares de calidad."
+      desc: "Creamos estructuras a medida con materiales de la más alta calidad."
     },
     {
-      title: "Ingeniería y seguridad",
-      desc: "Cada proyecto es calculado y diseñado para resistir las condiciones más exigentes y cumplir con las normas vigentes."
+      title: "Ingeniería y precisión",
+      desc: "Cada diseño es calculado para garantizar estabilidad, seguridad y eficiencia."
     },
     {
       title: "Instalaciones profesionales",
-      desc: "Contamos con un equipo experto en montaje de torres y estructuras metálicas de gran escala."
+      desc: "Contamos con personal capacitado para el montaje de torres y estructuras metálicas."
     }
   ];
 
@@ -40,8 +40,6 @@
     }, 800);
   }
 
-  // Cambio automático cada 7 segundos
-  setInterval(changeImage, 7000);
-
-  // Cambio manual con clic
+  setInterval(changeImage, 10000);
   mainImage.addEventListener("click", changeImage);
+

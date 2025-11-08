@@ -99,27 +99,64 @@ main {
 }
 
 /* ===== HERO SECTION ===== */
+/* HERO: imagen de ancho completo */
 .hero {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 60px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
+  width: 100%;
+  min-height: 100vh; /* usa min-height en lugar de height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Asegura que no haya espacios entre secciones */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* Si tus otras secciones tienen margen superior, elimínalo */
+section + section {
+  margin-top: 0;
+}
+
+/* Asegura que tu galería y demás páginas no hereden márgenes extra */
+.galeria,
+.nosotros,
+.servicios {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Opcional: un pequeño espacio si quieres separación visual entre secciones */
+main section:not(:first-of-type) {
+  padding-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh; /* ajusta el alto en móviles para que no quede espacio de más */
+  }
+}
+
 
 .hero-image {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 .hero img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover; /* hace que la imagen cubra todo el espacio sin deformarse */
+  object-position: center;
   animation: fadeInScale 1.2s ease forwards;
 }
 
@@ -130,14 +167,13 @@ main {
   width: 100%;
   height: 100%;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45); /* oscurece un poco la imagen para resaltar el texto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   opacity: 1;
   transition: opacity 0.8s ease;
 }
@@ -146,16 +182,23 @@ main {
   opacity: 0;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-text h1 {
+  font-size: clamp(32px, 5vw, 60px);
+  margin-bottom: 16px;
+  color: #fff;
 }
 
+.hero-text p {
+  font-size: clamp(16px, 2vw, 22px);
+  max-width: 800px;
+  color: #f1f5f9;
+  line-height: 1.7;
+}
+
+/* Animaciones */
 @keyframes fadeInScale {
   from {
-    transform: scale(0.95);
+    transform: scale(1.05);
     opacity: 0;
   }
   to {
@@ -163,6 +206,7 @@ main {
     opacity: 1;
   }
 }
+
 
 /* ===== CARD SERVICES ===== */
 .grid-3 {
