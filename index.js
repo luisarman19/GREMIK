@@ -1,9 +1,9 @@
 
   const images = [
+    "imagenes/imagen8.jpeg",
+    "imagenes/imagen9.jpeg",
     "imagenes/imagen10.jpeg",
-    "imagenes/imagen2.jpeg",
-    "imagenes/imagen3.jpeg",
-    "imagenes/imagen4.jpeg"
+    "imagenes/imagen11.jpeg"
   ];
 
   const texts = [
